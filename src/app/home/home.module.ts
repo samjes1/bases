@@ -7,21 +7,16 @@ import { ArticleComponent } from './components/article/article.component';
 import { IonContent } from '@ionic/angular/standalone';
 import { SharedModule } from '../shared/shared.module';
 
-
 @NgModule({
-  declarations: [
- 
- 
-  ],
+  declarations: [],
 
-  imports: [   HomeComponent,
+  imports: [
     CommonModule,
     HomeRoutingModule,
+    HomeComponent,
     ArticleComponent,
     IonContent,
     SharedModule,
-    
   ],
-  
 })
-export class HomeModule { }
+export class HomeModule {}

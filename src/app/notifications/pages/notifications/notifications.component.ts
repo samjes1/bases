@@ -7,7 +7,7 @@ import { IonicModule } from '@ionic/angular';
 @Component({
   selector: 'app-notifications',
   templateUrl: './notifications.component.html',
-  imports: [DetailNotificationComponent, IconNotificationComponent, IonicModule],
+  imports: [DetailNotificationComponent, IonicModule],
 })
 export class NotificationsComponent  implements OnInit {
 
