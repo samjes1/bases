@@ -4,6 +4,7 @@ import { CommonModule } from '@angular/common';
 import { ContactRoutingModule } from './contact-routing.module';
 import { SharedModule } from '../shared/shared.module';
 import { IonContent } from '@ionic/angular/standalone';
+import { ContactComponent } from './pages/contact/contact.component';
 
 
 @NgModule({
@@ -11,6 +12,7 @@ import { IonContent } from '@ionic/angular/standalone';
   imports: [
     CommonModule,
     ContactRoutingModule,
+    ContactComponent,
     SharedModule,
     IonContent,
   ]
