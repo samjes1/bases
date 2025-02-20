@@ -7,6 +7,10 @@ export const routes: Routes = [
     loadChildren: () => import('./home/home.module').then((m) => m.HomeModule),
   },
   {
+    path: 'home',
+    loadChildren: () => import('./home/home.module').then((m) => m.HomeModule),
+  },
+  {
     path: 'store',
     loadChildren: () => import('./store/store.module').then((m) => m.StoreModule),
   },
@@ -26,15 +30,15 @@ export const routes: Routes = [
     }
   
   },
- /*  {
+  {
     path: '',
     redirectTo: 'home',
     pathMatch: 'full',
-  }, */
+  },
   {
     path: '**',
    /*  redirectTo: '',
     pathMatch: 'full', */
-    loadComponent: () => import('./shared/pages/not-found/not-found.component').then((m) => m.NotFoundComponent)
+    loadComponent: () => import('./shared/pages/not-found/not-found.component').then((c) => c.NotFoundComponent)
   }
 ];
