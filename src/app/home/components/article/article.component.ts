@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { ModelsHome } from '../../../models/home.interface';
+
 
 @Component({
   selector: 'app-article',
@@ -7,8 +9,29 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ArticleComponent  implements OnInit {
 
-  constructor() { }
+  article!: ModelsHome.ArticuloI;
+
+  constructor() { 
+    this.loadArticulo();
+
+  }
 
   ngOnInit() {}
+
+  loadArticulo(){
+    const data: ModelsHome.ArticuloI = {
+      title: 'Angular',
+      description: 'lorem ipsum dolor sit am',
+      image: {
+        url: '/assets/images/angular.png',
+        desc: 'logo de angular'
+      },
+
+    }
+    this.article = data;
+  }
+  
+
+
 
 }

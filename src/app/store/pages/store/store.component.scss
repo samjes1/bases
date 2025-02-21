@@ -1,0 +1,36 @@
+.content-item{
+    margin: 10px;
+    padding: 10px;
+    border: 1px solid black
+}
+
+.button-remove{ 
+    background: #ef6b6b;
+    color: white;
+    width: 25px;
+    height: 25px;
+    border: 1px solid #607d8b;
+    margin-right: 10px;
+}
+
+.button-add {
+    background: greenyellow;
+    color: white;
+    width: 25px;
+    height: 25px;
+    border: 1px solid #607d8b;
+}
+
+.content-carrito{
+    display: flex;
+    position: sticky;
+    top: 60px;
+    justify-content: end;
+}
+
+.detalle-carrito{
+    background: #ffc107;
+    padding: 10px;
+    border-radius: 5px;
+    margin-right: 10px;
+}
