@@ -45,59 +45,8 @@ export class StoreComponent  implements OnInit {
     console.log('this.carrito', this.carrito);
     
   }
-  addItem(item: ModelStore.Item, index: number){
-    console.log('add item', item.price, index);
-    let exist = false;
-   this.carrito.items.every((itemExist) => {
-      if(itemExist?.item?.id === item?.id){
-        itemExist.cant += 1;
-        exist = true;
-        return false;
-      }
-      return true;
-   }); 
-   if (!exist){
-    this.carrito.items.push({
-      item,
-      cant: 1,
-    })
-   }
-    this.getTotal();
-  }
+ 
 
-  getTotal(){
-    let total = 0;
-    let cantidad = 0;
-    this.carrito.items.forEach((producto) => {
-      total = total + (producto.item.price * producto.cant);
-      cantidad += producto.cant;
-    });
-     this.carrito.total = total;
-     this.carrito.cantidadtotal = cantidad;
-     
-  }
-
-  removeItem(item: ModelStore.Item){
-    console.log('remove item', item);
-    const exist = this.carrito.items.findIndex((itemExist) => {
-      if(itemExist.item.id === item.id){
-        return true;
-      }
-      return false;
-      });
-
-      if(exist >= 0){
-       
-        console.log('exist', exist);
-        if (this.carrito.items[exist].cant === 1) {
-          this.carrito.items.splice(exist, 1);
-        } else {
-          this.carrito.items[exist].cant -= 1;
-        }
-      }
-      
-    this.getTotal();
-  }
   validateInput(){
     console.log('validate input');
   }
