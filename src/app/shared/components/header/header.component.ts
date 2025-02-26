@@ -1,6 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { NotificationsModule } from "../../../notifications/notifications.module";
-import { IconNotificationComponent } from "../../../notifications/components/icon-notification/icon-notification.component";
 
 @Component({
   selector: 'app-header',
@@ -10,6 +9,8 @@ import { IconNotificationComponent } from "../../../notifications/components/ico
   
 })
 export class HeaderComponent  implements OnInit {
+
+  @Input() title: string = "Título";
 
   constructor() { }
 

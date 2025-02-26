@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { RouterModule } from '@angular/router';
 import { ModelStore } from 'src/app/models/store.interface';
 
@@ -8,9 +8,17 @@ import { ModelStore } from 'src/app/models/store.interface';
   styleUrls: ['./product-detail.component.scss'],
   imports: [RouterModule]
 })
-export class ProductDetailComponent  implements OnInit {
+export class ProductDetailComponent implements OnInit {
     @Input()
     item!: ModelStore.Item;
+    @Input()
+    index!: number;
+    @Output() add = new EventEmitter();
+    @Output() remove = new EventEmitter();
+
+
+    cantidad: number = 0;
+
   constructor() { }
 
   ngOnInit() {
@@ -18,13 +26,21 @@ export class ProductDetailComponent  implements OnInit {
     
   }
 
-  addItem(item: ModelStore.Item){
+  addItem(){
 
-  }
+    console.log('additem');
+    this.add.emit();
 
-  removeItem(item: ModelStore.Item){
+    this.cantidad = ++this.cantidad;
+ }
+
+  removeItem(){
   
-     
+    console.log('removeitem');
+    this.remove.emit();
+    if (this.cantidad > 0) {
+            this.cantidad = --this.cantidad;
+    }
   }
 
 

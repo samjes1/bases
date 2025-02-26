@@ -11,8 +11,8 @@ import { RouterModule } from '@angular/router';
   declarations: [],
   imports: [
     CommonModule,
-    FooterComponent,
     HeaderComponent,
+    FooterComponent,
     NotificationsModule,
     RouterModule, // add this line for routing in shared module  (this module is used in multiple modules)
    

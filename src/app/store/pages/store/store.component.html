@@ -1,21 +1,21 @@
 
 <ion-content>
 
-  <app-header/>
+  <app-header [title]="tituloPagina"/>
   
- <h1 style="text-align: center">Store</h1>
+
 
   @if (!cargando) {
     
     <div class="content-carrito">
     @if (carrito) {
-      <p class="detalle-carrito">Cant: {{carrito.cantidadtotal}}| Total: ${{carrito.total.toFixed(2)}}</p>
+      <p class="detalle-carrito">Cant: {{carrito.cantidadtotal}} | Total: ${{carrito.total.toFixed(2)}}</p>
     }
   </div>
   
   @for (item of items; track item.id) {
 
-    <app-product-detail [item]="item"></app-product-detail>
+    <app-product-detail [item]="item" [index]="$index" (add)="addItem(item)" (remove)="removeItem(item)" ></app-product-detail>
     
      
    

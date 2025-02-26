@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ArticleComponent } from "../../components/article/article.component";
 import { SharedModule } from "../../../shared/shared.module";
 import { IonContent } from '@ionic/angular/standalone';
+import { DatabaseService } from 'src/app/services/database.service';
 
 
 @Component({
@@ -12,8 +13,12 @@ import { IonContent } from '@ionic/angular/standalone';
 })
 export class HomeComponent  implements OnInit {
 
-  constructor() { }
+  constructor(
+    private databaseService: DatabaseService
+  ) { }
 
-  ngOnInit() {}
+  ngOnInit() {
+   // this.databaseService.getData('items')
+  }
 
 }

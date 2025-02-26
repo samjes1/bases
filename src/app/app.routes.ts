@@ -14,12 +14,12 @@ export const routes: Routes = [
     path: 'store',
     loadChildren: () => import('./store/store.module').then((m) => m.StoreModule),
   },
-  {path: 'notifications',
-    loadChildren: () => import('./notifications/notifications.module').then((m) => m.NotificationsModule),
-  },
   {
     path: 'contact',
     loadChildren: () => import('./contact/contact.module').then((m) => m.ContactModule),
+  },
+  {path: 'notifications',
+    loadChildren: () => import('./notifications/notifications.module').then((m) => m.NotificationsModule),
   },
   {
     path: 'not-found',
