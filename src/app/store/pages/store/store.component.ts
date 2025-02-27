@@ -31,7 +31,14 @@ export class StoreComponent  implements OnInit {
   
    }
 
-  ngOnInit() {}
+  ngOnInit() {
+    this.carrito = this.carritoService.carrito;
+    this.carritoService.getCarritoChanges().subscribe(changes => {
+      console.log('carritoChanges', changes);
+      this.carrito = changes;
+    
+    })
+  }
 
   loadItems() {
     this.databaseService.getData('items')
@@ -45,7 +52,7 @@ export class StoreComponent  implements OnInit {
  
   addItem(item: ModelStore.Item){
    //this.carritoService.addItem(item);
-   this.carrito = this.carritoService.carrito;
+   //this.carrito = this.carritoService.carrito;
   }
 
  /*  getTotal(){
@@ -62,7 +69,7 @@ export class StoreComponent  implements OnInit {
 
   removeItem(item: ModelStore.Item){
     //this.carritoService.removeItem(item);
-    this.carrito = this.carritoService.carrito;
+   // this.carrito = this.carritoService.carrito;
     
   }
 

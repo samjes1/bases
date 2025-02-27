@@ -15,8 +15,8 @@
   
   @for (item of items; track item.id) {
 
-    <app-product-detail [item]="item" [index]="$index" (add)="addItem(item)" (remove)="removeItem(item)" ></app-product-detail>
-    
+    <app-product-detail [item]="item" [index]="$index"  ></app-product-detail>
+<!--     (add)="addItem(item)" (remove)="removeItem(item)" -->
      
    
     }@empty {

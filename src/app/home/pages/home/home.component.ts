@@ -1,8 +1,9 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, inject, OnInit } from '@angular/core';
 import { ArticleComponent } from "../../components/article/article.component";
 import { SharedModule } from "../../../shared/shared.module";
 import { IonContent } from '@ionic/angular/standalone';
 import { DatabaseService } from 'src/app/services/database.service';
+import { CarritoService } from 'src/app/services/carrito.service';
 
 
 @Component({
@@ -14,6 +15,7 @@ import { DatabaseService } from 'src/app/services/database.service';
 export class HomeComponent  implements OnInit {
 
   cargando: boolean = false 
+  private carritoService = inject(CarritoService)
 
   constructor(
     private databaseService: DatabaseService
@@ -21,6 +23,9 @@ export class HomeComponent  implements OnInit {
 
   ngOnInit() {
     //this.databaseService.getData('items')
+    this.carritoService.getCarritoChanges().subscribe(changes => {
+      console.log('carrito', changes);
+    })
   }
 
   getCarrito(){
