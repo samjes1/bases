@@ -7,6 +7,7 @@ import { DatabaseService } from '../../../services/database.service';
 import { CarritoService } from '../../../services/carrito.service';
 
 
+
 @Component({
   selector: 'app-store',
   templateUrl: './store.component.html',
@@ -23,11 +24,11 @@ export class StoreComponent  implements OnInit {
   tituloPagina = 'Tienda'
 
   private databaseService = inject(DatabaseService)
-  // private carritoService = inject(CarritoService) 
+   private carritoService = inject(CarritoService) 
 
   constructor() {
     this.loadItems();
-    this.initCarrito();
+  
    }
 
   ngOnInit() {}
@@ -41,37 +42,13 @@ export class StoreComponent  implements OnInit {
       }, 2000);
   }
 
-  initCarrito(){
-    this.carrito = {
-      total: 0,
-      cantidadtotal: 0,
-      items: [],
-      
-    };
-    console.log('this.carrito', this.carrito);
-    
-  }
+ 
   addItem(item: ModelStore.Item){
-    console.log('add item', item);
-    let exist = false;
-   this.carrito.items.every((itemExist) => {
-      if(itemExist?.item?.id === item?.id){
-        itemExist.cant += 1;
-        exist = true;
-        return false;
-      }
-      return true;
-   }); 
-   if (!exist){
-    this.carrito.items.push({
-      item,
-      cant: 1,
-    })
-   }
-    this.getTotal();
+   //this.carritoService.addItem(item);
+   this.carrito = this.carritoService.carrito;
   }
 
-  getTotal(){
+ /*  getTotal(){
     let total = 0;
     let cantidad = 0;
     this.carrito.items.forEach((producto) => {
@@ -81,28 +58,12 @@ export class StoreComponent  implements OnInit {
      this.carrito.total = total;
      this.carrito.cantidadtotal = cantidad;
      
-  }
+  } */
 
   removeItem(item: ModelStore.Item){
-    console.log('remove item', item);
-    const exist = this.carrito.items.findIndex((itemExist) => {
-      if(itemExist.item.id === item.id){
-        return true;
-      }
-      return false;
-      });
-
-      if(exist >= 0){
-       
-        console.log('exist', exist);
-        if (this.carrito.items[exist].cant === 1) {
-          this.carrito.items.splice(exist, 1);
-        } else {
-          this.carrito.items[exist].cant -= 1;
-        }
-      }
-      
-    this.getTotal();
+    //this.carritoService.removeItem(item);
+    this.carrito = this.carritoService.carrito;
+    
   }
 
 

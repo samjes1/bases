@@ -1,3 +1,4 @@
+import { CarritoService } from './../../../services/carrito.service';
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { RouterModule } from '@angular/router';
 import { ModelStore } from 'src/app/models/store.interface';
@@ -18,8 +19,9 @@ export class ProductDetailComponent implements OnInit {
 
 
     cantidad: number = 0;
-
-  constructor() { }
+  
+  constructor(
+    private carritoService: CarritoService) { }
 
   ngOnInit() {
     console.log('item', this.item);
@@ -30,13 +32,14 @@ export class ProductDetailComponent implements OnInit {
 
     console.log('additem');
     this.add.emit();
-
+    this.carritoService.addItem(this.item);
     this.cantidad = ++this.cantidad;
  }
 
   removeItem(){
   
     console.log('removeitem');
+    this.carritoService.removeItem(this.item);
     this.remove.emit();
     if (this.cantidad > 0) {
             this.cantidad = --this.cantidad;

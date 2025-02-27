@@ -1,5 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, inject } from '@angular/core';
 import { RouterModule } from '@angular/router';
+import { CarritoService } from '../../../services/carrito.service';
 
 @Component({
   selector: 'app-footer',
@@ -9,8 +10,16 @@ import { RouterModule } from '@angular/router';
 })
 export class FooterComponent  implements OnInit {
 
+  cant: number = 0;
+private carritoService = inject(CarritoService);
+
   constructor() { }
 
-  ngOnInit() {}
+  ngOnInit() {
+    this.cant = this.carritoService.carrito.cantidadtotal;
+    this.carritoService.getCarritoChanges().subscribe(changes => {
+      this.cant = changes.cantidadtotal;
+    })
+  }
 
 }

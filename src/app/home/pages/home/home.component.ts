@@ -13,12 +13,19 @@ import { DatabaseService } from 'src/app/services/database.service';
 })
 export class HomeComponent  implements OnInit {
 
+  cargando: boolean = false 
+
   constructor(
     private databaseService: DatabaseService
   ) { }
 
   ngOnInit() {
-   // this.databaseService.getData('items')
+    //this.databaseService.getData('items')
+  }
+
+  getCarrito(){
+    console.log(this.databaseService.getData('carrito') , 'lo que agregas al carrito');
+     
   }
 
 }
