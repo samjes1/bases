@@ -32,12 +32,12 @@ export class StoreComponent  implements OnInit {
    }
 
   ngOnInit() {
-    this.carrito = this.carritoService.carrito;
+   /*  this.carrito = this.carritoService.carrito;
     this.carritoService.getCarritoChanges().subscribe(changes => {
       console.log('carritoChanges', changes);
       this.carrito = changes;
     
-    })
+    }) */
   }
 
   loadItems() {

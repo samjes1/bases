@@ -7,11 +7,7 @@
 
   @if (!cargando) {
     
-    <div class="content-carrito">
-    @if (carrito) {
-      <p class="detalle-carrito">Cant: {{carrito.cantidadtotal}} | Total: ${{carrito.total.toFixed(2)}}</p>
-    }
-  </div>
+    <app-detail-carrito></app-detail-carrito>
   
   @for (item of items; track item.id) {
 

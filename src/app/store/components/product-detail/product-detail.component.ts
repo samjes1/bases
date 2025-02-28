@@ -14,8 +14,8 @@ export class ProductDetailComponent implements OnInit {
     item!: ModelStore.Item;
     @Input()
     index!: number;
-    @Output() add = new EventEmitter();
-    @Output() remove = new EventEmitter();
+    // @Output() add = new EventEmitter();
+    // @Output() remove = new EventEmitter();
 
 
     cantidad: number = 0;
@@ -31,7 +31,7 @@ export class ProductDetailComponent implements OnInit {
   addItem(){
 
     console.log('additem');
-    this.add.emit();
+   // this.add.emit();
     this.carritoService.addItem(this.item);
     this.cantidad = ++this.cantidad;
  }
@@ -40,7 +40,7 @@ export class ProductDetailComponent implements OnInit {
   
     console.log('removeitem');
     this.carritoService.removeItem(this.item);
-    this.remove.emit();
+   // this.remove.emit();
     if (this.cantidad > 0) {
             this.cantidad = --this.cantidad;
     }
