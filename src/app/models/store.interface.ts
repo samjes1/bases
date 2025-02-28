@@ -6,6 +6,7 @@ export namespace ModelStore {
         description: string;
         price: number;
         image?: string;
+        stock: number;
     }
     
     

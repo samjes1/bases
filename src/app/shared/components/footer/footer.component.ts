@@ -2,12 +2,13 @@ import { Component, OnDestroy, OnInit, inject } from '@angular/core';
 import { RouterModule } from '@angular/router';
 import { CarritoService } from '../../../services/carrito.service';
 import { Subscription } from 'rxjs';
+import { NgClass } from '@angular/common';
 
 @Component({
   selector: 'app-footer',
   templateUrl: './footer.component.html',
   styleUrls: ['./footer.component.scss'],
-  imports: [RouterModule]
+  imports: [RouterModule, NgClass]
 })
 export class FooterComponent  implements OnInit, OnDestroy {
 

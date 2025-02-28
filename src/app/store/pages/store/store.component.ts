@@ -90,21 +90,24 @@ const DataDemo: ModelStore.Item[] = [
     name: 'Producto 1',
     description: 'Descripcion del producto 1',
     price: 1.12,
-    image: './assets/images/hamburguesa.jpeg'
+    image: './assets/images/hamburguesa.jpeg',
+    stock: 0
   },
   {
     id: '002',
     name: 'Hamburguesa con Queso', 
     description: 'Descripcion del producto 2',
     price: 4.99,
-    image: './assets/images/hamburguesadequeso.jpeg'
+    image: './assets/images/hamburguesadequeso.jpeg',
+    stock: 2
   },
   {
     id: '003',
     name: 'Hamburguesa Especial',
     description: 'Descripcion del producto 3',
     price: 7.50,
-    image: './assets/images/hamburguesaespecial.jpeg'
+    image: './assets/images/hamburguesaespecial.jpeg',
+    stock: 10
   },
  
 ]

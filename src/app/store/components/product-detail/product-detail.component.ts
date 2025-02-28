@@ -1,3 +1,4 @@
+import { NgStyle } from '@angular/common';
 import { CarritoService } from './../../../services/carrito.service';
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { RouterModule } from '@angular/router';
@@ -7,7 +8,7 @@ import { ModelStore } from 'src/app/models/store.interface';
   selector: 'app-product-detail',
   templateUrl: './product-detail.component.html',
   styleUrls: ['./product-detail.component.scss'],
-  imports: [RouterModule]
+  imports: [RouterModule, NgStyle]
 })
 export class ProductDetailComponent implements OnInit {
     @Input()
@@ -16,7 +17,7 @@ export class ProductDetailComponent implements OnInit {
     index!: number;
     // @Output() add = new EventEmitter();
     // @Output() remove = new EventEmitter();
-
+  color: 'aliceblue' | '#fde2e2' | '#dfe7d6' = 'aliceblue'
 
     cantidad: number = 0;
   
@@ -25,9 +26,10 @@ export class ProductDetailComponent implements OnInit {
 
   ngOnInit() {
     console.log('item', this.item);
-    
+    this.getColor();
   }
 
+  
   addItem(){
 
     console.log('additem');
@@ -44,6 +46,15 @@ export class ProductDetailComponent implements OnInit {
     if (this.cantidad > 0) {
             this.cantidad = --this.cantidad;
     }
+  }
+
+  getColor(){
+    if (this.item.stock === 0){
+      this.color = '#fde2e2';
+    } else if (this.item.stock < 5) {
+      this.color = 'aliceblue';
+    }else 
+    this.color = '#dfe7d6';
   }
 
 
