@@ -6,6 +6,7 @@ import { HomeComponent } from './pages/home/home.component';
 import { ArticleComponent } from './components/article/article.component';
 import { IonContent } from '@ionic/angular/standalone';
 import { SharedModule } from '../shared/shared.module';
+import { ArticlePageComponent } from './pages/article-page/article-page.component';
 
 @NgModule({
   declarations: [],
@@ -15,6 +16,7 @@ import { SharedModule } from '../shared/shared.module';
     HomeRoutingModule,
     HomeComponent,
     ArticleComponent,
+    ArticlePageComponent,
     IonContent,
     SharedModule,
   ],

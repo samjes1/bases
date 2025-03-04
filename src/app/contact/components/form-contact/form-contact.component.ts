@@ -7,8 +7,19 @@ import { Component, OnInit } from '@angular/core';
 })
 export class FormContactComponent  implements OnInit {
 
+  form: any ={
+    email: '',
+    name: '',
+    phone: '',
+  }
+
   constructor() { }
 
   ngOnInit() {}
+
+  sendForm(){
+    console.log('envia');
+    
+  }
 
 }

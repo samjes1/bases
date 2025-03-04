@@ -7,7 +7,19 @@
   <app-detail-carrito></app-detail-carrito>
   
     <button (click)="getCarrito()">carrito</button>
-      <app-article/>
+
+    @if (!cargando) {
+
+      @for (article of articles; track $index) {
+        <app-article [article]="article"/>
+  
+      } @empty {
+        No hay articulos para mostrar
+      }
+    } @else {
+      <p style="text-align: center;">cargando...</p>
+    }
+
       
   
     <app-footer/>

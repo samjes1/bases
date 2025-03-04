@@ -1,9 +1,15 @@
 
 @if (article) {
-  <div class="articulo">
+
+  <div class="articulo" (click)="gotoArticle()" >
+
+  <!-- <div class="articulo" [routerLink]="['/home/article/']" 
+  [queryParams] = "{id: article.id}"
+  > -->
   
     <div>
-      <img [src]="article.image.url" [alt]="article.image.desc" /> 
+      <img src="/assets/images/angular.png" alt="logo angular">
+      <!-- <img [src]="article.image.url" [alt]="article.image.desc" />  -->
     </div>
   
     <div class="articulo-titulo">
@@ -11,7 +17,7 @@
     </div>
   
     <div class="contenido">
-      <p>{{article.description}}</p>
+      <p>{{article.body}}</p>
     </div>
   
   </div>

@@ -7,6 +7,7 @@ import { IonContent } from '@ionic/angular/standalone';
 import { ContactComponent } from './pages/contact/contact.component';
 
 
+
 @NgModule({
   declarations: [],
   imports: [
@@ -15,6 +16,7 @@ import { ContactComponent } from './pages/contact/contact.component';
     ContactComponent,
     SharedModule,
     IonContent,
-  ]
+  ],
+  
 })
 export class ContactModule { }

@@ -1,0 +1,27 @@
+
+<ion-content>
+
+  <app-header titulo="article"></app-header>
+
+ <app-detail-carrito></app-detail-carrito>
+
+ @if (article) {
+  <!-- title -->
+  <div style="margin: 10px">
+    <div>
+      <h2>{{article.title}}</h2>
+    </div>
+   <!--  content -->
+    <div>
+      <p>{{article.body}}</p>
+    </div>
+
+  </div>
+ }
+
+ <app-footer></app-footer>
+
+
+
+
+</ion-content>
