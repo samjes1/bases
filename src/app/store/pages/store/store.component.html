@@ -1,17 +1,14 @@
-
 <ion-content>
 
   <app-header [title]="tituloPagina"/>
   
-
-
   @if (!cargando) {
     
     <app-detail-carrito></app-detail-carrito>
   
   @for (item of items; track item.id) {
 
-    <app-product-detail [item]="item" [index]="$index"  ></app-product-detail>
+    <app-product-detail [item]="item" [index]="$index"></app-product-detail>
 <!--     (add)="addItem(item)" (remove)="removeItem(item)" -->
      
    
@@ -30,7 +27,6 @@
       <input (keydown)="updateInput($event)" title="updateInput"/>
     </div>
     <div style="margin: 60px"></div>
-
 
   <app-footer/>
 </ion-content>
