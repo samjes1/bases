@@ -1,20 +1,21 @@
+import { inject } from '@angular/core';
 import { ActivatedRouteSnapshot, CanActivateFn, RouterStateSnapshot } from '@angular/router';
+import { WebService } from 'src/app/services/web.service';
 
-export const isAdminGuard: CanActivateFn = async (
+export const IsAdminGuard: CanActivateFn = async (
   route: ActivatedRouteSnapshot, 
   state: RouterStateSnapshot) => {
-    console.log('isAdminGuard: Checking if user is admin...');
-  const is = await isAdmin();
 
-  console.log('isAdminGuard: User is admin:', is);
-  return is;
+  const webService = inject(WebService)
+    /* await true; */
+  return false;
 };
 
-export function isAdmin(): Promise<boolean> {
+/* export function isAdmin(): Promise<boolean> {
   return new Promise<boolean>((resolve, reject) => {
     setTimeout(() => {
       console.log('isAdmin: Resolving as true');
       resolve(true);
     }, 2000);
   });
-}
+} */

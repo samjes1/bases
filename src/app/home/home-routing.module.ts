@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { HomeComponent } from './pages/home/home.component';
 import { ArticlePageComponent } from './pages/article-page/article-page.component';
+import { IsAdminGuard } from '../shared/guards/is-admin.guard';
 
 const routes: Routes = [
   {
@@ -11,6 +12,7 @@ const routes: Routes = [
   {
     path: 'article',
     component: ArticlePageComponent,
+    canActivate: [IsAdminGuard]
   },
   /* {
     path: 'article/:id',
