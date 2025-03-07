@@ -4,18 +4,22 @@ import { ModelsHome } from 'src/app/models/home.interface';
 import { WebService } from 'src/app/services/web.service';
 import { SharedModule } from "../../../shared/shared.module";
 import { IonContent } from '@ionic/angular/standalone';
+import { DatePipe } from '@angular/common';
+import { Models } from 'src/app/models/models';
+import { HighlightDirective } from 'src/app/shared/directives/highlight.directive';
 
 @Component({
   selector: 'app-article-page',
   templateUrl: './article-page.component.html',
   styleUrls: ['./article-page.component.scss'],
-  imports: [SharedModule, IonContent],
+  imports: [SharedModule, IonContent, HighlightDirective],
+  
 })
 export class ArticlePageComponent  implements OnInit {
 
   private webservice = inject(WebService);
   private route = inject(ActivatedRoute);
-  article!: ModelsHome.ArticleI;
+  article!: Models.Home.ArticleI;
 
   constructor() {
    

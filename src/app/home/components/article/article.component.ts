@@ -1,12 +1,16 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { ModelsHome } from '../../../models/home.interface';
 import { Router, RouterModule } from '@angular/router';
+import { CommonModule, DatePipe } from '@angular/common';
+import { ShortPipe } from 'src/app/shared/pipes/short.pipe';
+import { SharedModule } from 'src/app/shared/shared.module';
 
 @Component({
   selector: 'app-article',
   templateUrl: './article.component.html',
   styleUrls: ['./article.component.scss'],
-  imports: [RouterModule],
+  imports: [RouterModule, SharedModule]
+  
 })
 export class ArticleComponent implements OnInit {
   @Input() article!: ModelsHome.ArticleI;

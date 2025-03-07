@@ -16,6 +16,7 @@ export interface ArticleI {
   body: string;
   userId: number;
   id?: number;
+  time?:  Date;
 }
 
 }

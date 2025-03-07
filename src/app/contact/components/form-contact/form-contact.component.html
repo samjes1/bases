@@ -19,3 +19,52 @@
   </div>
 
 </div>
+
+<h2 style="text-align: center">Formulario Reactivo</h2>
+
+<div class="content-form">
+  <form [formGroup]="datosForm" (ngSubmit)="sendForm()">
+
+    <div class="input-content">
+      <label for="email">Email</label>
+      <input placeholder="Correo" formControlName="email">
+      <span style="text-align: end;" 
+       *ngIf="datosForm.controls['email'].hasError('required')">
+        <i>Este campo es <strong>requerido</strong></i></span>
+        
+      <span style="text-align: end;" 
+       *ngIf="datosForm.controls['email'].hasError('email')">
+        <i>Ingresa un correo <strong>Válido</strong></i></span>
+    </div>
+
+
+    <div class="input-content">
+      <label for="name">Name</label>
+      <input placeholder="Nombre" formControlName="name">
+      <span style="text-align: end;" 
+       *ngIf="datosForm.controls['name'].hasError('required')">
+        <i>Este campo es <strong>requerido</strong></i></span>
+    </div>
+
+    <div class="input-content">
+      <label for="phone">Celular</label>
+      <input readonly placeholder="04156633656" formControlName="phone">
+      <span style="text-align: end;" 
+       *ngIf="datosForm.controls['name'].hasError('required')">
+        <i>Este campo es <strong>requerido</strong></i></span>
+    </div>
+
+
+    <div style="text-align: center">
+      <button type="submit" 
+      appHighlight name="contact_form"
+      [disabled]="cargando"><strong>Enviar</strong></button>
+    </div>
+
+
+  </form>
+
+
+</div>
+
+<div style="margin-bottom: 68px"></div>

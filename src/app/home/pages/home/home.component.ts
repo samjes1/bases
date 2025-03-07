@@ -45,8 +45,12 @@ export class HomeComponent  implements OnInit {
     const res = await this.webService.request<ModelsHome.ArticleI[]>('GET', url, 'posts' );
     console.log('data' , res);
     if ( res ) {
-      this.articles = [];
-      this.articles.push(res[0])
+      this.articles = res; 
+      this.articles.forEach(article => {
+        console.log('article', article.time);
+        
+        article.time = new Date();
+      });
     }    
     this.cargando = false;
     

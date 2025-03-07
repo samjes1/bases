@@ -5,7 +5,7 @@ import { ContactRoutingModule } from './contact-routing.module';
 import { SharedModule } from '../shared/shared.module';
 import { IonContent } from '@ionic/angular/standalone';
 import { ContactComponent } from './pages/contact/contact.component';
-import { FormsModule } from '@angular/forms';
+
 
 
 
@@ -17,6 +17,7 @@ import { FormsModule } from '@angular/forms';
     ContactComponent,
     SharedModule,
     IonContent,
+    
    ],
   
 })
